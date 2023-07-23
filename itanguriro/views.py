@@ -27,8 +27,13 @@ def kugabura(request,n1,n2,n3):
             answer += f"{x} <br>"
     return HttpResponse(answer)
 
+def is_prime(number):
+    for n in range(2,number):
+        if number % n==0:
+            return False
+    return True
 
-def premier(request,n1,n2):
+def prime(request,n1,n2):
     answer=""
     n1=int(n1)
     n2=int(n2)

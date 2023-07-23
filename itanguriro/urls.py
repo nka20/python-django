@@ -22,5 +22,5 @@ path('',home,name='home'),
 path('guteranya/<n1>/<n2>/',guteranya,name='sawa'),
 path('igisoro/<n1>/',igisoro,name='table'),
 path('kugabura/<n1>/<n2>/<n3>',kugabura,name='divisible'),
-path('premier/<n1>/<n2>/',premier,name='divisible'),
+path('prime/<n1>/<n2>/',prime,name='divisible'),
 ]
