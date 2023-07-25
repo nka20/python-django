@@ -15,5 +15,6 @@ class EleveSerializer(serializers.ModelSerializer):
 class MinervalSerializer(serializers.ModelSerializer):
     class Meta:
         model = Minerval
-        fields = "nom","trimestre","minerval","utilisateur",
+        #fields = "nom","trimestre","minerval","utilisateur",
+        fields = "__all__"
         read_only_fields = ['utilisateur']
