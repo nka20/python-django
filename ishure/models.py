@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Classe(models.Model):
@@ -24,5 +25,6 @@ class Eleve(models.Model):
 class Minerval(models.Model):
     id=models.AutoField(primary_key=True)
     nom=models.ForeignKey(Eleve,on_delete=models.PROTECT)
+    utilisateur=models.ForeignKey(User,on_delete=models.PROTECT)
     minerval=models.IntegerField(unique=True)
     trimestre=models.CharField(max_length=80)

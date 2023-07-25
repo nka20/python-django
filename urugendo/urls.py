@@ -10,4 +10,5 @@ routers.register("itike",ItikeViewset)
 
 urlpatterns = [
     path("", include(routers.urls)),
+    path('api-auth/', include('rest_framework.urls')),#pour authentifier et se deconnecter
 ]
