@@ -26,6 +26,7 @@ routers.register("classe",ClasseViewset)
 
 urlpatterns = [
     path("", include(routers.urls)),
+    path('api-auth/', include('rest_framework.urls')),#pour authentifier et se deconnecter
 ]
 #urlpatterns = [
 #path('',home,name='home'),
