@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'itanguriro',
     'urugendo',
+    'akabazo',
     'ishure',
     'rest_framework',
 ]

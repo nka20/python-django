@@ -1,0 +1,13 @@
+from django.db import models
+from django.contrib.auth.models import User
+# Create your models here.
+class Produit(models.Model):
+    id=models.AutoField(primary_key=True)
+    nom=models.CharField(max_length=50)
+    prix_unitaire=models.IntegerField(unique=True)
+
+class Vente(models.Model):
+    id=models.AutoField(primary_key=True)
+    nom=models.ForeignKey(Produit,on_delete=models.PROTECT)
+    quantite=models.IntegerField(unique=True)
+    prix_total=models.IntegerField(unique=True)
