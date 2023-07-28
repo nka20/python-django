@@ -6,6 +6,10 @@ class Produit(models.Model):
     nom=models.CharField(max_length=50)
     prix_unitaire=models.IntegerField(unique=True)
 
+
+    def __str__(self):
+       return f" {self.nom}"
+
 class Vente(models.Model):
     id=models.AutoField(primary_key=True)
     nom=models.ForeignKey(Produit,on_delete=models.PROTECT)
