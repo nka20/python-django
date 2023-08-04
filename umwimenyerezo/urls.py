@@ -23,5 +23,4 @@ urlpatterns = [
     path('allan/', include ('itanguriro.urls')),
     path('urugendo/', include ('urugendo.urls')),
     path('', include ('ishure.urls')),
-    path('akabazo/', include ('akabazo.urls')),
 ]

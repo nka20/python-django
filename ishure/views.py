@@ -7,6 +7,10 @@ class EleveViewset(viewsets.ModelViewSet):
     queryset= Eleve.objects.all()
     serializer_class=EleveSerializer
 
+    def perform_create(self,serializer):
+        serializer.save(utilisateur=self.request.user)
+        return serializer
+
 class MinervalViewset(viewsets.ModelViewSet):
     queryset= Minerval.objects.all()
     serializer_class=MinervalSerializer

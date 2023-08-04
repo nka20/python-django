@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 class Classe(models.Model):
     id=models.AutoField(primary_key=True)
     nom=models.CharField(max_length=50)
+    utilisateur=models.ForeignKey(User,on_delete=models.PROTECT)
 
     def __str__(self):
        return f" {self.nom}"
@@ -17,6 +18,7 @@ class Eleve(models.Model):
     classe=models.ForeignKey(Classe,on_delete=models.PROTECT)
     telephone_du_parent=models.IntegerField(unique=True)
     naissance=models.DateField()
+    utilisateur=models.ForeignKey(User,on_delete=models.PROTECT)
 
     
     def __str__(self):

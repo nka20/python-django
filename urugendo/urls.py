@@ -2,13 +2,13 @@ from django.urls import path, include
 from rest_framework import routers
 from .views import *
 
-routers = routers.DefaultRouter()
+router = routers.DefaultRouter()
 
-routers.register("ingenzi",IngenziViewset)
-routers.register("urugendo",UrugendoViewset)
-routers.register("itike",ItikeViewset)
+router.register("ingenzi", IngenziViewset)
+router.register("urugendo", UrugendoViewset)
+router.register("itike", ItikeViewset)
 
 urlpatterns = [
-    path("", include(routers.urls)),
-    path('api-auth/', include('rest_framework.urls')),#pour authentifier et se deconnecter
+    path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls')),
 ]

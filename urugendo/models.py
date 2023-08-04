@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Ingenzi(models.Model):
     id = models.BigAutoField(primary_key=True)
@@ -7,6 +8,9 @@ class Ingenzi(models.Model):
 
     class Meta:
         verbose_name_plural = "Ingenzi"
+
+    def __str__(self) -> str:
+        return f"{self.izina} {self.telephone}"
 
 class Urugendo(models.Model):
     id = models.BigAutoField(primary_key=True)
@@ -23,16 +27,11 @@ class Urugendo(models.Model):
 
 class Itike(models.Model):
     id = models.BigAutoField(primary_key=True)
-    ingenzi = models.ForeignKey(Ingenzi, null=False, on_delete=models.PROTECT)
+    ingenzi = models.ForeignKey(Ingenzi, on_delete=models.PROTECT)
     urugendo = models.ForeignKey(Urugendo, null=True, on_delete=models.SET_NULL)
     place = models.SmallIntegerField()
-    date = models.DateTimeField(auto_now_add=True)
+    date = models.DateTimeField()
+    uwayimuhaye = models.ForeignKey(User, on_delete=models.PROTECT)
 
     class Meta:
         verbose_name_plural = "Amatike"
-
-# on_delete:
-# models.SET_NULL = 
-# models.SET_DEFAULT = 
-# models.PROTECT = fk yamaze kuronka aba enfant ntihanagurike 
-# models.CASCADE : fk ihanaguwe enfant bijane
