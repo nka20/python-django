@@ -1,3 +1,4 @@
+from rest_framework_simplejwt.views import TokenObtainPairView,TokenRefreshView
 """
 URL configuration for umwimenyerezo project.
 
@@ -26,6 +27,8 @@ routers.register("classe",ClasseViewset)
 
 urlpatterns = [
     path("", include(routers.urls)),
+    path('login/',TokenObtainPainView.as_view()),
+    path('refresh/',TokenRefreshView.as_view()),
     path('api-auth/', include('rest_framework.urls')),#pour authentifier et se deconnecter
 ]
 #urlpatterns = [
