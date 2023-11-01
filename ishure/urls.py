@@ -27,7 +27,7 @@ routers.register("classe",ClasseViewset)
 
 urlpatterns = [
     path("", include(routers.urls)),
-    path('login/',TokenObtainPainView.as_view()),
+ path('login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('refresh/',TokenRefreshView.as_view()),
     path('api-auth/', include('rest_framework.urls')),#pour authentifier et se deconnecter
 ]
